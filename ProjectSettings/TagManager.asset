@@ -12,6 +12,7 @@ TagManager:
   - Activator
   - CameraEventShort
   - CameraEventLarge
+  - Tutorial
   layers:
   - Default
   - TransparentFX

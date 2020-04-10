@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\DN_Scripts\CameraControl.cs" />
     <Compile Include="Assets\DN_Scripts\UI\Load_Button.cs" />
+    <Compile Include="Assets\DN_Scripts\UI\TutorialAppear.cs" />
     <Compile Include="Assets\TRX_Scripts\CustomCharacterController.cs" />
     <Compile Include="Assets\TRX_Scripts\DoDamage.cs" />
     <Compile Include="Assets\TRX_Scripts\PlayerDeath.cs" />
