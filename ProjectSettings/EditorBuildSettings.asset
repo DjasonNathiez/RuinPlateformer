@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_DN_Scenes/Main Menu.unity
     guid: 40b19233c2899894eb94516a5efe7124
   - enabled: 1
+    path: Assets/TRX_Scenes/JumpBox.unity
+    guid: df3e0e0a411df63438df823e72861cb2
+  - enabled: 0
     path: Assets/_DN_Scenes/Zone_T0.unity
     guid: e1f80cdb2ef4e3e449b9d6e832dea1d0
   m_configObjects: {}

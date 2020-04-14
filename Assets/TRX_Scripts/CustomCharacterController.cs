@@ -15,13 +15,15 @@ public class CustomCharacterController : MonoBehaviour
         wallJump,
         none
     }
+
     public Animator animator;
 
-    bool jumpInput = false;
+    public bool jumpInput = false;
     float hKeyInput;
     bool isJumping = false;
     bool isFalling = false;
-    bool canImpulse = false;
+    public bool canJump = true;
+    public bool canImpulse = false;
     bool enableMouv = true;
     bool unfreeze = false;
 
@@ -32,6 +34,7 @@ public class CustomCharacterController : MonoBehaviour
     [SerializeField] float jumpHForce = 4.0f;
     [SerializeField] float impulseHForce = 6.0f;
     [SerializeField] float impulseForce = 12.0f;
+    [SerializeField, Range(0f,0.50f)] float jumpBuffering = 0.04f;
     float speedInfo;
 
     SpriteRenderer playerSprite;
@@ -93,6 +96,7 @@ public class CustomCharacterController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpInput = true;
+            StartCoroutine("JumpBuffering");
             animator.SetBool("isJumping", true);
         }
         else
@@ -188,7 +192,7 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         //Saut de base
-        if (jumpInput && groundType == GroundType.ground)
+        if (jumpInput && groundType == GroundType.ground && canJump)
         {
 
             playerRigidbody.AddForce(jumpDir, ForceMode2D.Impulse); //Remplacer le simple Add force par quelque chose avec plus de contrôle.
@@ -241,30 +245,7 @@ public class CustomCharacterController : MonoBehaviour
         //Impulsion après un Saut
         else if (jumpInput && canImpulse)
         {
-
-            //freeze position
-            enableMouv = false;
-            playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
-            StartCoroutine("WaitandImpulse");//Démarage de la coroutine qui permet le freeze
-
-            if (unfreeze/*Condition validée dans la coroutine après le temps de freeze*/)
-            {
-                //unfreeze position
-                playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-                //Impulsion
-                velocity = playerRigidbody.velocity;
-                velocity = impulseDir;
-                playerRigidbody.velocity = velocity;
-
-                //Mise à jour des marqueurs après l'impulsion
-                enableMouv = true;
-                jumpInput = false;
-
-                isJumping = true;
-                canImpulse = false;
-                StopCoroutine("WaitandImpulse");//On stoppe la coroutine (sinon elle continue à tourner)
-            }
+            StartCoroutine("Impulse");
         }
 
         //Aterissage
@@ -276,6 +257,33 @@ public class CustomCharacterController : MonoBehaviour
         }
     }
     
+    public IEnumerator Impulse()
+    {
+        //freeze position
+        enableMouv = false;
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+        yield return new WaitForSeconds(0.18f);
+        unfreeze = true;
+        if (unfreeze/*Condition validée dans la coroutine après le temps de freeze*/)
+        {
+            //unfreeze position
+            playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            //Impulsion
+            velocity = playerRigidbody.velocity;
+            velocity = impulseDir;
+            playerRigidbody.velocity = velocity;
+
+            //Mise à jour des marqueurs après l'impulsion
+            enableMouv = true;
+            jumpInput = false;
+
+            isJumping = true;
+            canImpulse = false;
+        }
+        StopCoroutine("Impulse");
+    }
+
     void WallJump()
     {
         //Ralentissement sur un WallJump
@@ -288,8 +296,6 @@ public class CustomCharacterController : MonoBehaviour
         }
     }
 
-
-
     void GroundingUpdate()
     {
         //Setup des raycast pour mettre à jour le grounding
@@ -300,7 +306,7 @@ public class CustomCharacterController : MonoBehaviour
         //Grounding au sol
         if (numHits > 0)
             groundType = GroundType.ground;
-       
+
         //Grounding sur un mur de WallJump
         else if (wallHitsLeft > 0 || wallHitsRight > 0)
         {
@@ -309,13 +315,17 @@ public class CustomCharacterController : MonoBehaviour
         }
         //Pas de Grounding (vide)
         else
+        {
             groundType = GroundType.none;
-    }
-    //Coroutine de freeze avant l'Impulse
-    IEnumerator WaitandImpulse()
-    {
-        yield return new WaitForSeconds(0.14f);
-        unfreeze = true;
+        }
     }
 
+    private IEnumerator JumpBuffering()
+    {
+        yield return new WaitForSeconds(jumpBuffering);
+        jumpInput = false;
+        Debug.Log(jumpInput);
+
     }
+
+}

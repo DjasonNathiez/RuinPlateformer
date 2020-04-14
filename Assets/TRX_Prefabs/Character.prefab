@@ -244,12 +244,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9112296999041579484}
+  jumpInput: 0
+  canJump: 1
+  canImpulse: 0
   acceleration: 75
   maxSpeed: 9
   jumpForce: 25
   jumpHForce: 7
   impulseHForce: 3
   impulseForce: 15.5
+  jumpBuffering: 0.25
 --- !u!114 &7053613004831845148
 MonoBehaviour:
   m_ObjectHideFlags: 0
