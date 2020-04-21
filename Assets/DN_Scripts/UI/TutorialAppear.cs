@@ -6,12 +6,12 @@ public class TutorialAppear : MonoBehaviour
 {
     public GameObject Tuto;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Tutorial"))
         {
             Tuto.SetActive(true);
-
         }
     }
 
@@ -22,4 +22,5 @@ public class TutorialAppear : MonoBehaviour
             Tuto.SetActive(false);
         }
     }
+
 }
