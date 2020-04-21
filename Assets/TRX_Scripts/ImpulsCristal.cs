@@ -12,7 +12,7 @@ public class ImpulsCristal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Character");
         cristalCollider = GetComponent<CircleCollider2D>();
         playerCollider = player.GetComponent<BoxCollider2D>();
         script = player.GetComponent<CustomCharacterController>();
@@ -32,14 +32,12 @@ public class ImpulsCristal : MonoBehaviour
         script.canJump = false;
     }
 
-   /* public void OnTriggerStay2D(Collider2D collision)
-    {
-        if(Input.GetButtonDown("Jump"))
-        script.StartCoroutine("Impulse");
-    }
-    */
-    public void OnTriggerExit2D(Collider2D collision)
+      public void OnTriggerExit2D(Collider2D collision)
     {
         script.canJump = true;
     }
 }
+
+
+
+

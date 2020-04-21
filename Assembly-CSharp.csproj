@@ -67,6 +67,7 @@
     <Compile Include="Assets\DN_Scripts\UI\Load_Button.cs" />
     <Compile Include="Assets\DN_Scripts\UI\MenuPause.cs" />
     <Compile Include="Assets\DN_Scripts\UI\TutorialAppear.cs" />
+    <Compile Include="Assets\TRX_Scripts\Activator.cs" />
     <Compile Include="Assets\TRX_Scripts\CustomCharacterController.cs" />
     <Compile Include="Assets\TRX_Scripts\DoDamage.cs" />
     <Compile Include="Assets\TRX_Scripts\FallingRock.cs" />
