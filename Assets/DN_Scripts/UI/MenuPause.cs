@@ -7,7 +7,9 @@ public class MenuPause : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
+    public static bool SettingUp = false;
     public GameObject pauseMenuUI;
+    public GameObject settingMenuUI;
 
     private void Update()
     {
@@ -41,6 +43,8 @@ public class MenuPause : MonoBehaviour
     public void MenuPrincipal()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void Quit()

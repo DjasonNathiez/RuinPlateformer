@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DN_AudioMixer\SettingMenu.cs" />
     <Compile Include="Assets\DN_Scripts\CameraControl.cs" />
     <Compile Include="Assets\DN_Scripts\UI\Load_Button.cs" />
     <Compile Include="Assets\DN_Scripts\UI\MenuPause.cs" />
