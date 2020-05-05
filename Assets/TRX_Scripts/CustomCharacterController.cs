@@ -26,6 +26,7 @@ public class CustomCharacterController : MonoBehaviour
     public bool canImpulse = false;
     bool enableMouv = true;
     bool unfreeze = false;
+    bool isLeftWallJump = false;
 
 
     [SerializeField] float acceleration = 0.0f;
@@ -39,7 +40,8 @@ public class CustomCharacterController : MonoBehaviour
 
     SpriteRenderer playerSprite;
     Rigidbody2D playerRigidbody;
-    BoxCollider2D playerCollider;
+    //BoxCollider2D playerCollider;
+    Collider2D playerCollider;
 
     LayerMask groundLayer;
     LayerMask wallJumpLayer;
@@ -49,6 +51,7 @@ public class CustomCharacterController : MonoBehaviour
     Vector2 velocity;
     Vector2 impulseDir = new Vector2(0f, 0f);
     Vector2 jumpDir = new Vector2(0f, 0f);
+    Vector2 wallJump = new Vector2(3.5f, 16.0f);
 
     RaycastHit2D[] rGroundCast;
     RaycastHit2D[] rWallCast;
@@ -57,7 +60,8 @@ public class CustomCharacterController : MonoBehaviour
     {
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
-        playerCollider = gameObject.GetComponent<BoxCollider2D>();
+        //playerCollider = gameObject.GetComponent<BoxCollider2D>();
+        playerCollider = gameObject.GetComponent<Collider2D>();
 
         groundLayer = LayerMask.GetMask("Ground");
         wallJumpLayer = LayerMask.GetMask("WallJump");
@@ -78,7 +82,7 @@ public class CustomCharacterController : MonoBehaviour
     {
         GroundingUpdate();
         VelocityUpdate();
-        ImpulseDirection();
+        JumpDirection();
         JumpUpdate();
         WallJump();
     }
@@ -106,7 +110,7 @@ public class CustomCharacterController : MonoBehaviour
 
     }
 
-    void ImpulseDirection()
+    void JumpDirection()
     {
         //Change la direction du vecteur utilisé pour l'impulsion (ImpulseDir) en fonction de l'input directionnel (hKeyInupt)
         if (hKeyInput > 0)
@@ -136,6 +140,7 @@ public class CustomCharacterController : MonoBehaviour
         {
             jumpDir = new Vector2(0f, jumpForce);
         }
+
     }
 
     void VelocityUpdate()
@@ -207,36 +212,35 @@ public class CustomCharacterController : MonoBehaviour
         //WallJump
         else if (jumpInput && groundType == GroundType.wallJump)
         {
-            //Setup des raycasts pour détecter les murs de WallJump à gauche ou à droite
+           /* //Setup des raycasts pour détecter les murs de WallJump à gauche ou à droite
             int wallHitsLeft = playerCollider.Raycast(Vector2.left, rWallCast, 1.3f, wallJumpLayer);
             int wallHitsRight = playerCollider.Raycast(-Vector2.left, rWallCast, 1.3f, wallJumpLayer);
+            */
 
-            //Fluidifie le wallJump
-            if (wallHitsLeft > 0 && hKeyInput < 0)
+            //saut
+            if (isLeftWallJump)
             {
-                jumpDir = new Vector2(jumpDir.x, 0);
-                playerRigidbody.AddForce(jumpDir, ForceMode2D.Impulse); //Remplacer le simple Add force par quelque chose avec plus de contrôle.
+                transform.position = transform.position + new Vector3(0.4f, 0.6f, 0);
+
+                //Saut
+                velocity = playerRigidbody.velocity;
+                velocity = velocity + new Vector2(wallJump.x, wallJump.y);
+                playerRigidbody.velocity = velocity;
 
                 jumpInput = false;
-
                 isJumping = true;
                 canImpulse = true;
             }
-            else if (wallHitsRight > 0 && hKeyInput > 0)
+            else if (!isLeftWallJump)
             {
-                jumpDir = new Vector2(jumpDir.x, 0);
-                playerRigidbody.AddForce(jumpDir, ForceMode2D.Impulse); //Remplacer le simple Add force par quelque chose avec plus de contrôle.
+                transform.position = transform.position + new Vector3(-0.4f, 0.6f, 0);
+
+                //Saut
+                velocity = playerRigidbody.velocity;
+                velocity = velocity + new Vector2(-wallJump.x, wallJump.y);
+                playerRigidbody.velocity = velocity;
 
                 jumpInput = false;
-
-                isJumping = true;
-                canImpulse = true;
-            }
-            else
-            {
-                playerRigidbody.AddForce(jumpDir, ForceMode2D.Impulse); //Remplacer le simple Add force par quelque chose avec plus de contrôle.
-                jumpInput = false;
-
                 isJumping = true;
                 canImpulse = true;
             }
@@ -261,7 +265,7 @@ public class CustomCharacterController : MonoBehaviour
     {
         //freeze position
         enableMouv = false;
-        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
         yield return new WaitForSeconds(0.18f);
         unfreeze = true;
         if (unfreeze/*Condition validée dans la coroutine après le temps de freeze*/)
@@ -291,7 +295,7 @@ public class CustomCharacterController : MonoBehaviour
         {
             //bug : saut sur le mur pour remonter quand aucun input directionnel pressé
             velocity = playerRigidbody.velocity;
-            if (!isJumping) velocity.y = velocity.y * 0.75f;
+            if (!isJumping) velocity.y = velocity.y * 0.80f;
             playerRigidbody.velocity = velocity;
         }
     }
@@ -300,18 +304,25 @@ public class CustomCharacterController : MonoBehaviour
     {
         //Setup des raycast pour mettre à jour le grounding
         int numHits = playerCollider.Cast(-Vector2.up, rGroundCast, 0.1f);
-        int wallHitsLeft = playerCollider.Raycast(Vector2.left, rWallCast, 1.3f, wallJumpLayer);
-        int wallHitsRight = playerCollider.Raycast(-Vector2.left, rWallCast, 1.3f, wallJumpLayer);
+        int wallHitsLeft = playerCollider.Raycast(Vector2.left, rWallCast, 0.9f, wallJumpLayer);
+        int wallHitsRight = playerCollider.Raycast(-Vector2.left, rWallCast, 0.9f, wallJumpLayer);
 
         //Grounding au sol
         if (numHits > 0)
             groundType = GroundType.ground;
 
         //Grounding sur un mur de WallJump
-        else if (wallHitsLeft > 0 || wallHitsRight > 0)
+        else if (wallHitsLeft > 0 )
         {
-            print("touché");
+            print("touché gauche");
             groundType = GroundType.wallJump;
+            isLeftWallJump = true;
+        }
+        else if (wallHitsRight > 0)
+        {
+            print("touché droit");
+            groundType = GroundType.wallJump;
+            isLeftWallJump = false;
         }
         //Pas de Grounding (vide)
         else

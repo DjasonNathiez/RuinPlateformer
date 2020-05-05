@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_DN_Scenes/Zone_T0.unity
+- path: Assets/TRX_Scenes/T_2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
