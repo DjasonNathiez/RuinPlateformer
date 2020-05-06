@@ -16,6 +16,9 @@ public class CustomCharacterController : MonoBehaviour
         none
     }
 
+    public AudioClip walk;
+    public AudioClip fall;
+
     public Animator animator;
 
     public bool jumpInput = false;
@@ -42,6 +45,7 @@ public class CustomCharacterController : MonoBehaviour
     Rigidbody2D playerRigidbody;
     //BoxCollider2D playerCollider;
     Collider2D playerCollider;
+    AudioSource source;
 
     LayerMask groundLayer;
     LayerMask wallJumpLayer;
@@ -56,6 +60,10 @@ public class CustomCharacterController : MonoBehaviour
     RaycastHit2D[] rGroundCast;
     RaycastHit2D[] rWallCast;
 
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
     void Start()
     {
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -75,7 +83,6 @@ public class CustomCharacterController : MonoBehaviour
     {
         InputCheck();
         animator.SetFloat("Speed", Mathf.Abs(speedInfo));
-
     }
     
     void FixedUpdate()
@@ -162,6 +169,7 @@ public class CustomCharacterController : MonoBehaviour
             movementInput = Vector2.zero;//L'input de mouvement a été consommé, on le réinitialise
 
             velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+       
 
             //Tourne le sprite dans la direction vers laquelle on se dirige
             if (Input.GetAxis("Horizontal") < 0f) 
@@ -205,6 +213,7 @@ public class CustomCharacterController : MonoBehaviour
             //Mise à jour des marqueurs après le saut
             jumpInput = false;//L'input de saut à été consommé, on le réinitialise
             isJumping = true;
+            canImpulse = true;
             canImpulse = true;
 
         }
@@ -310,6 +319,7 @@ public class CustomCharacterController : MonoBehaviour
         //Grounding au sol
         if (numHits > 0)
             groundType = GroundType.ground;
+            
 
         //Grounding sur un mur de WallJump
         else if (wallHitsLeft > 0 )

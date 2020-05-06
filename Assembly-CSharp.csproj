@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DN_AudioMixer\SettingMenu.cs" />
+    <Compile Include="Assets\DN_Scripts\Audio\Player_SFX.cs" />
     <Compile Include="Assets\DN_Scripts\CameraControl.cs" />
     <Compile Include="Assets\DN_Scripts\EndLevel.cs" />
     <Compile Include="Assets\DN_Scripts\UI\Load_Button.cs" />
