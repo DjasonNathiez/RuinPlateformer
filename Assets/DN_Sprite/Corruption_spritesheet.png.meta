@@ -1,0 +1,484 @@
+fileFormatVersion: 2
+guid: eb1268e3cb82deb40abc2d97f03f1f88
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6986817294222267665
+    second: Corruption_spritesheet_0
+  - first:
+      213: -8245773008732124457
+    second: Corruption_spritesheet_1
+  - first:
+      213: -5799491350879922637
+    second: Corruption_spritesheet_2
+  - first:
+      213: 2175022597230231436
+    second: Corruption_spritesheet_3
+  - first:
+      213: 6442878124780319422
+    second: Corruption_spritesheet_4
+  - first:
+      213: 2380332163546369677
+    second: Corruption_spritesheet_5
+  - first:
+      213: 7317400206353973983
+    second: Corruption_spritesheet_6
+  - first:
+      213: 5487081788184281561
+    second: Corruption_spritesheet_7
+  - first:
+      213: -7235611650610296272
+    second: Corruption_spritesheet_8
+  - first:
+      213: -8019484001461209623
+    second: Corruption_spritesheet_9
+  - first:
+      213: -8604702429597704487
+    second: Corruption_spritesheet_10
+  - first:
+      213: 7526290124251931230
+    second: Corruption_spritesheet_11
+  - first:
+      213: -7572595333389371778
+    second: Corruption_spritesheet_12
+  - first:
+      213: 5313776284185937358
+    second: Corruption_spritesheet_13
+  - first:
+      213: -9049008238263736976
+    second: Corruption_spritesheet_14
+  - first:
+      213: -660506402872459962
+    second: Corruption_spritesheet_15
+  - first:
+      213: 6143387148360587524
+    second: Corruption_spritesheet_16
+  - first:
+      213: -675012456877966858
+    second: Corruption_spritesheet_17
+  - first:
+      213: 5515758321382215850
+    second: Corruption_spritesheet_18
+  - first:
+      213: 6495265931585441760
+    second: Corruption_spritesheet_19
+  - first:
+      213: -4454028787399304771
+    second: Corruption_spritesheet_20
+  - first:
+      213: -5324165801232874512
+    second: Corruption_spritesheet_21
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Corruption_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 59
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1159ca4bf4926f060800000000000000
+      internalID: 6986817294222267665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 62
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ffa56478b3f2e10800000000000000
+      internalID: 2175022597230231436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 62
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e4e9fbd73a80120800000000000000
+      internalID: 2380332163546369677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 0
+        width: 61
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5f9fa2ac115b090800000000000000
+      internalID: -8019484001461209623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 60
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de53eddab4f59880800000000000000
+      internalID: -8604702429597704487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 0
+        width: 59
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e522194fdf0c27860800000000000000
+      internalID: 7526290124251931230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 0
+        width: 59
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76bb856aacb8e690800000000000000
+      internalID: -7572595333389371778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 59
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec54cca70635eb940800000000000000
+      internalID: 5313776284185937358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 60
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075e4b473f67b6280800000000000000
+      internalID: -9049008238263736976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 61
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d7ae41de865d6f0800000000000000
+      internalID: -660506402872459962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 61
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4099bb7ff02b14550800000000000000
+      internalID: 6143387148360587524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 61
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f933d03fbfd1a6f0800000000000000
+      internalID: -675012456877966858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 0
+        width: 61
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa054e438f8eb8c40800000000000000
+      internalID: 5515758321382215850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 62
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db953b39a6c1032c0800000000000000
+      internalID: -4454028787399304771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corruption_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 59
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f34b349963cc16b0800000000000000
+      internalID: -5324165801232874512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

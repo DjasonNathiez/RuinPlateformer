@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/_DN_Scenes/Main Menu.unity
     guid: 40b19233c2899894eb94516a5efe7124
   - enabled: 1
-    path: Assets/_DN_Scenes/Zone_T0.unity
+    path: Assets/_DN_Scenes/Zone_T1.unity
     guid: e1f80cdb2ef4e3e449b9d6e832dea1d0
   - enabled: 1
-    path: Assets/_DN_Scenes/Zone_T1.unity
-    guid: a2989e5f5c638174ea9db1fe22322966
+    path: Assets/TRX_Scenes/T_2.unity
+    guid: d9cb0cffd19b25440a3665fa60957bf6
   m_configObjects: {}
