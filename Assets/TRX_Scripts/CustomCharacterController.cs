@@ -43,8 +43,7 @@ public class CustomCharacterController : MonoBehaviour
 
     SpriteRenderer playerSprite;
     Rigidbody2D playerRigidbody;
-    //BoxCollider2D playerCollider;
-    Collider2D playerCollider;
+    BoxCollider2D playerCollider;
     AudioSource source;
 
     LayerMask groundLayer;
@@ -68,8 +67,7 @@ public class CustomCharacterController : MonoBehaviour
     {
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
-        //playerCollider = gameObject.GetComponent<BoxCollider2D>();
-        playerCollider = gameObject.GetComponent<Collider2D>();
+        playerCollider = gameObject.GetComponent<BoxCollider2D>();
 
         groundLayer = LayerMask.GetMask("Ground");
         wallJumpLayer = LayerMask.GetMask("WallJump");
